@@ -1,0 +1,18 @@
+<div>
+    <app-products-nav-bar></app-products-nav-bar>
+  <!--puis que c'est un observable on utilise toujours async -->
+    <ng-container *ngIf="productsState$ | async as state" [ngSwitch]="state.dataState">
+      <ng-container *ngSwitchCase="DataStateEnum.INITIAL">
+        <div class="p-2"> Initial State</div>
+      </ng-container>
+      <ng-container  *ngSwitchCase="DataStateEnum.LOADING">
+        <div class="loader blocktext"></div>
+      </ng-container>
+      <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+        <div class="p-2 text-danger"> {{state.errorMessage |json}}</div>
+      </ng-container>
+      <ng-container  *ngSwitchCase="DataStateEnum.LOADED">
+        <app-products-list [state]="state"></app-products-list>
+      </ng-container>
+    </ng-container>
+</div>
