@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
             /*Quand on recoit le state on pointe sur le state suivant
             car dans le store on peux avoir plusieurs stores*/
           );
+    //toute les données des actions qu'on recoit sont stocké en productsState$ qui les transmet avec @input vers ses composants fils
   }
 
 

@@ -13,6 +13,9 @@ import {ProductsReducer} from "./ngrx/products.reducer";
 import {ProductsEffects} from "./ngrx/products.effects";
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductItemComponent } from './components/products/products-list/product-item/product-item.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewProductComponent } from './components/products/new-product/new-product.component';
+import { EditProductComponent } from './components/products/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { ProductItemComponent } from './components/products/products-list/produc
     ProductsComponent,
     ProductsNavBarComponent,
     ProductsListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    NewProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +34,9 @@ import { ProductItemComponent } from './components/products/products-list/produc
     //On doit déclarer les Reducers et les Effects
     StoreModule.forRoot({productsStateStore:ProductsReducer}),//ici on spécifie le reducers
     EffectsModule.forRoot([ProductsEffects]),//ici on spécifie les effects
-    StoreDevtoolsModule.instrument()//comme ca on va l'activer, au démarrage de l'application à chaque fois qu'il y'a quelque chose qui se passe dans ngrx il va notifier le plugin de google chrome redux qu'on peut ajouter
-
+    StoreDevtoolsModule.instrument(),//comme ca on va l'activer, au démarrage de l'application à chaque fois qu'il y'a quelque chose qui se passe dans ngrx il va notifier le plugin de google chrome redux qu'on peut ajouter
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

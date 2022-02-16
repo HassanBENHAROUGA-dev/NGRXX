@@ -12,7 +12,9 @@
         <div class="p-2 text-danger"> {{state.errorMessage |json}}</div>
       </ng-container>
       <ng-container  *ngSwitchCase="DataStateEnum.LOADED">
+
         <app-products-list [state]="state"></app-products-list>
+
       </ng-container>
     </ng-container>
 </div>

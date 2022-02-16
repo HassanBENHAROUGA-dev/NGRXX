@@ -1,0 +1,63 @@
+<div class="container">
+  <ng-container *ngIf="productFormGroup">
+    <ng-container *ngIf="state as data">
+      <ng-container *ngIf="data.dataState==ProductsStateEnum.LOADING">
+        Loading....
+      </ng-container>
+      <ng-container *ngIf="data.dataState==ProductsStateEnum.ERROR">
+        {{state.errorMessage}}
+      </ng-container>
+      <ng-container *ngIf="data.dataState==ProductsStateEnum.UPDATED">
+        <div class="alert-success container p-3 m-3">
+          <span>Product Updated Successfully</span>
+          <button class="btn btn-success ml-3" (click)="okUpdated()">Updated</button>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.dataState==ProductsStateEnum.LOADED">
+        <div class="container" *ngIf="formBuild" >
+          <form [formGroup]="productFormGroup" (ngSubmit)="onUpdatedProduct()" novalidate>
+            <div class="form-group">
+              <label for="id">Id </label>
+              <label>{{productFormGroup.controls["id"].value}} </label>
+              <input type="hidden" class="form-control" formControlName="id" id="id" >
+            </div>
+            <div class="form-group">
+              <label for="name">Name </label>
+              <input type="text" class="form-control" formControlName="name" id="name" [ngClass]="{'is-invalid':submitted && productFormGroup.controls['name'].errors}">
+              <div *ngIf="submitted && productFormGroup.controls['name'].errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.controls['name'].errors['required']">Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="price">Price </label>
+              <input type="text" class="form-control" formControlName="price"
+                     pattern=".*[1-9].*" [class.is-invalid]="productFormGroup.controls['price'].invalid && productFormGroup.controls['price'].touched" required>
+              <div *ngIf="productFormGroup.controls['price'].errors && (productFormGroup.controls['price'].invalid || productFormGroup.controls['price'].untouched)">
+                <small class="text-danger" *ngIf="productFormGroup.controls['price'].errors['required']">price is required</small>
+                <small class="text-danger" *ngIf="productFormGroup.controls['price'].errors['pattern']">price must be at least 1 digits</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity </label>
+              <input type="number" class="form-control" formControlName="quantity"
+                     pattern=".*[1-9].*" [class.is-invalid]="productFormGroup.controls['quantity'].invalid && productFormGroup.controls['quantity'].touched" required>
+              <div *ngIf="productFormGroup.controls['quantity'].errors && (productFormGroup.controls['quantity'].invalid || productFormGroup.controls['quantity'].untouched)">
+                <small class="text-danger" *ngIf="productFormGroup.controls['quantity'].errors['required']">Quantity is required</small>
+                <small class="text-danger" *ngIf="productFormGroup.controls['quantity'].errors['pattern']">Quantity must be at least 1 digits</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="selected">Selected </label>
+              <input type="checkbox" class="form-check" formControlName="selected" id="selected">
+            </div>
+            <div class="form-group">
+              <label>Available</label>
+              <input type="checkbox" formControlName="available" class="form-check">
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>

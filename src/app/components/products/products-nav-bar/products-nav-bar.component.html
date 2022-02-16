@@ -1,8 +1,25 @@
-<ul class="nav nav-pills">
-  <li>
-    <button class="btn btn-outline-info" (click)="OnGetAllProducts()">All</button>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <!--<button [ngClass]="state.currentAction.type==productActionsType.GET_ALL_PRODUCTS_SUCCESS?'btn-danger':'btn-outline'" class="btn btn-outline-info btn-sm"  (click)="OnGetAllProducts()">All</button>-->
+    <button class="btn btn-outline-info btn-sm"  (click)="OnGetAllProducts()">All</button>
   </li>
   <li>
-    <button class="btn btn-outline-info mx-2" (click)="OnGetSelectedProducts()">Selected</button>
+    <button  class="btn btn-outline-info mx-2 btn-sm" (click)="OnGetSelectedProducts()">Selected</button>
+  </li>
+  <li>
+    <button  class="btn btn-outline-info btn-sm" (click)="OnNewProductS()">New Product</button>
   </li>
 </ul>
+  <ul class="navbar-nav m-lg-auto">
+    <li>
+      <form #f="ngForm"  (ngSubmit)="onSearch(f.value)" class="form-check-inline">
+        <input type="text" ngModel name="keyword">
+        <button type="submit"   class="btn btn-outline-success btn-sm">
+          <i class="fa fa-search"></i>
+          Search
+        </button>
+      </form>
+    </li>
+  </ul>
+</nav>

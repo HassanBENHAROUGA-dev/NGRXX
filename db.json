@@ -1,26 +1,10 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Computers",
-      "price": "45000",
-      "quantity": 600,
-      "selected": true,
-      "available": true
-    },
-    {
       "id": 3,
       "name": "SmartPhone",
       "price": 5000,
       "quantity": 800,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 4,
-      "name": "Gaming Laptop",
-      "price": 20000,
-      "quantity": 10000,
       "selected": true,
       "available": true
     },
@@ -28,17 +12,9 @@
       "name": "Msi Leopard",
       "price": "21000",
       "quantity": 5,
-      "selected": false,
-      "available": true,
-      "id": 6
-    },
-    {
-      "name": "MSI RTX",
-      "price": "20000",
-      "quantity": 50,
       "selected": true,
       "available": true,
-      "id": 9
+      "id": 6
     },
     {
       "name": "Sandbox",
@@ -57,68 +33,20 @@
       "id": 12
     },
     {
-      "name": "cazazart",
+      "name": "SOLANA",
       "price": "5",
-      "quantity": 5,
+      "quantity": "250",
       "selected": true,
       "available": true,
-      "id": 16
+      "id": 13
     },
     {
-      "name": "zafaz",
-      "price": "5",
-      "quantity": 5,
+      "name": "AI MARKETING HASSAN BENHAROUGA i did it",
+      "price": "5000",
+      "quantity": 5000,
       "selected": true,
       "available": true,
-      "id": 19
-    },
-    {
-      "name": "az",
-      "price": "9",
-      "quantity": 9,
-      "selected": true,
-      "available": true,
-      "id": 24
-    },
-    {
-      "name": "az",
-      "price": "9",
-      "quantity": 9,
-      "selected": true,
-      "available": true,
-      "id": 25
-    },
-    {
-      "name": "ttjftj",
-      "price": "9",
-      "quantity": 9,
-      "selected": true,
-      "available": true,
-      "id": 26
-    },
-    {
-      "name": "ttjftjpp",
-      "price": "9",
-      "quantity": 9,
-      "selected": true,
-      "available": true,
-      "id": 27
-    },
-    {
-      "name": "ttjftj",
-      "price": "9",
-      "quantity": 9,
-      "selected": true,
-      "available": true,
-      "id": 28
-    },
-    {
-      "name": "efzef",
-      "price": "99",
-      "quantity": 99,
-      "selected": true,
-      "available": false,
-      "id": 29
+      "id": 14
     }
   ]
 }
